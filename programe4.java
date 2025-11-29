@@ -1,20 +1,26 @@
 import java.util.*;
-public class programe4 {
-
-//    sum of digits
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter the numbers :");
-            int n = sc.nextInt();
-            int sum = 0;
-            int remainder;
-            while (n != 0) {
-                remainder = n%10;
-                sum += remainder;
-                n=n/10;
-
+class programe4 {
+    public static int prime_number(int num) {
+        int temp = 0;
+        for (int i = 0; i < num; i++) {
+            if (num % i == 0) {
+                temp = temp + 1;
             }
-            System.out.println("Sum of digits is :"+sum);
+
         }
+        if (temp > 0) {
+            System.out.println("the number is prime");
+        } else {
+            System.out.println("this number is not prime");
+        }
+        return prime_number(num);
     }
 
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number :");
+        int num = sc.nextInt();
+        prime_number(num);
+    }
+}
